@@ -1,0 +1,5 @@
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Infrastructur\obj\Debug\net7.0\Infrastructur.csproj.AssemblyReference.cache
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Infrastructur\obj\Debug\net7.0\Infrastructur.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Infrastructur\obj\Debug\net7.0\Infrastructur.AssemblyInfoInputs.cache
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Infrastructur\obj\Debug\net7.0\Infrastructur.AssemblyInfo.cs
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Infrastructur\obj\Debug\net7.0\Infrastructur.csproj.CoreCompileInputs.cache

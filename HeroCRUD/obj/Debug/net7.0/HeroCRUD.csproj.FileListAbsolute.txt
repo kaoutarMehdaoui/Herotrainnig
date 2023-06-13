@@ -1,0 +1,6 @@
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.csproj.AssemblyReference.cache
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.AssemblyInfoInputs.cache
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.AssemblyInfo.cs
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.csproj.CoreCompileInputs.cache
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.MvcApplicationPartsAssemblyInfo.cache
