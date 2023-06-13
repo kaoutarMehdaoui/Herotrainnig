@@ -1,0 +1,5 @@
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
