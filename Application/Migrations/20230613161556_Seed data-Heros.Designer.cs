@@ -3,6 +3,7 @@ using Application.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Application.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20230613161556_Seed data-Heros")]
+    partial class SeeddataHeros
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,17 +90,6 @@ namespace Application.Migrations
                     b.ToTable("Heros");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Age = 40,
-                            Description = "Leading The Most Powerful Superheroes And Villains",
-                            FirstName = "Christopher",
-                            LastName = "Hemsworth",
-                            NameHero = "Thor",
-                            gender = "male",
-                            photo = "/Images/photoHero/Thor.png"
-                        },
                         new
                         {
                             Id = 2,
@@ -209,51 +201,6 @@ namespace Application.Migrations
                         {
                             Id = 1,
                             Name = "Flight"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Invisibility"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Shapeshifting"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Healing"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Super Speed"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Super Strength"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Under Water Control"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "Telekinesis "
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Name = "Elemental Control"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Name = "Mind Control"
                         });
                 });
 

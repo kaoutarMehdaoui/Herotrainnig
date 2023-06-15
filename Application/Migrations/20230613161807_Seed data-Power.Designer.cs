@@ -3,6 +3,7 @@ using Application.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Application.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20230613161807_Seed data-Power")]
+    partial class SeeddataPower
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,107 +88,6 @@ namespace Application.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Heros");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Age = 40,
-                            Description = "Leading The Most Powerful Superheroes And Villains",
-                            FirstName = "Christopher",
-                            LastName = "Hemsworth",
-                            NameHero = "Thor",
-                            gender = "male",
-                            photo = "/Images/photoHero/Thor.png"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Age = 40,
-                            Description = "Most Popular Superhero Of All Time",
-                            FirstName = "Christian ",
-                            LastName = "Bale",
-                            NameHero = "Batman",
-                            gender = "male",
-                            photo = "/Images/photoHero/Batman.jpg"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Age = 41,
-                            Description = "He is a Marvel patriotic superhero debuting in 1941 during the World War II and ranks high among the most popular superheroes.",
-                            FirstName = "Sebastian",
-                            LastName = "Tan",
-                            NameHero = "CaptainAmerica",
-                            gender = "male",
-                            photo = "/Images/photoHero/CaptainA.jpg"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Age = 52,
-                            Description = "Spider-Man is Marvel’s Peter Parker and the famed web slinger, also being the greatest superhero",
-                            FirstName = "Tobey",
-                            LastName = "Maguire",
-                            NameHero = "SpiderMan",
-                            gender = "male",
-                            photo = "/Images/photoHero/Spiderman.jpg"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Age = 30,
-                            Description = "The Hulk character was created in 1962 by Jack Kirby.He is one of the most powerful Marvel characters",
-                            FirstName = "Mark",
-                            LastName = "Ruffalo",
-                            NameHero = "Hulk",
-                            gender = "male",
-                            photo = "/Images/photoHero/Hulk.png"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Age = 30,
-                            Description = "Superman is one of the most famous and iconic superheroes of all time created by DC comics",
-                            FirstName = "Dean George ",
-                            LastName = "Cain",
-                            NameHero = "Superman",
-                            gender = "male",
-                            photo = "/Images/photoHero/Superman.jpg"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Age = 30,
-                            Description = "Superhero Girls. has been the mainstay of DC comics for several years, being sometimes a hero and sometimes a villain.",
-                            FirstName = "Halle ",
-                            LastName = "Berry",
-                            NameHero = "Catwoman",
-                            gender = "female",
-                            photo = "/Images/photoHero/Catwoman.jpg"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Age = 35,
-                            Description = "Female Superheroes",
-                            FirstName = "Scarlett",
-                            LastName = "Johansson",
-                            NameHero = "BlackWidow",
-                            gender = "female",
-                            photo = "/Images/photoHero/BlackWidow.jpg"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Age = 25,
-                            Description = "Supergirl is a fictional superhero created for DC comics by Otto Binder, first appearing in The Supergirl from Krypton.",
-                            FirstName = "Melissa",
-                            LastName = "Benoist",
-                            NameHero = "Supergirl",
-                            gender = "female",
-                            photo = "/Images/photoHero/Supergirl.jpg"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Models.Powers", b =>
@@ -205,11 +107,6 @@ namespace Application.Migrations
                     b.ToTable("Powers");
 
                     b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Flight"
-                        },
                         new
                         {
                             Id = 2,
