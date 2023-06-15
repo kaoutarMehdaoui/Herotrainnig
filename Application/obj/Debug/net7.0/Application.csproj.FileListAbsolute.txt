@@ -15,3 +15,5 @@ C:\Users\Kmehdaoui\source\repos\HeroCRUD\Application\obj\Debug\net7.0\refint\App
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\Application\obj\Debug\net7.0\Application.pdb
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\Application\obj\Debug\net7.0\Application.genruntimeconfig.cache
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\Application\obj\Debug\net7.0\ref\Application.dll
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Application\bin\Debug\net7.0\Infrastructur.dll
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\Application\bin\Debug\net7.0\Infrastructur.pdb
