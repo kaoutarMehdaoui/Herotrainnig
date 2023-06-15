@@ -3,6 +3,7 @@ using Application.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Application.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20230615141200_add-jointure2")]
+    partial class addjointure2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,18 +52,6 @@ namespace Application.Migrations
                             Id = 6,
                             HerosId = 1,
                             PowersId = 3
-                        },
-                        new
-                        {
-                            Id = 7,
-                            HerosId = 2,
-                            PowersId = 3
-                        },
-                        new
-                        {
-                            Id = 8,
-                            HerosId = 2,
-                            PowersId = 5
                         });
                 });
 

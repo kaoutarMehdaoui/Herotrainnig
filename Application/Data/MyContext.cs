@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace Application.Data
 {
@@ -16,6 +17,46 @@ namespace Application.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            seedData(modelBuilder);
+
+        }
+    
+        private void seedData(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<HeroPower>().HasData(new HeroPower()
+            {
+                Id = 6,
+                HerosId = 1,
+                PowersId = 3,
+
+            });
+            modelBuilder.Entity<HeroPower>().HasData(new HeroPower()
+            {
+                Id = 7,
+                HerosId = 2,
+                PowersId = 3,
+
+            });
+            modelBuilder.Entity<HeroPower>().HasData(new HeroPower()
+            {
+                Id = 8,
+                HerosId = 2,
+                PowersId = 5,
+
+            });
+
+
+
+
+
+
+
+
+
+
+            //-----------------------------------------------------------------
+
             //            modelBuilder.Entity<Heros>().HasData(new Heros
             //            {
             //                Id = 1,
@@ -213,120 +254,151 @@ namespace Application.Data
             //              );
             //        }
 
-            modelBuilder.Entity<Heros>().HasData(new HeroPower()
-            {
-                HerosId = 1,
-                Heros = {   Id = 1,
-                            FirstName = "Christopher",
-                            LastName = "Hemsworth",
-                            Age = 40,
-                            NameHero = "Thor",
-                            Description = "Leading The Most Powerful Superheroes And Villains",
-                            gender = "male",
-                            photo = "/Images/photoHero/Thor.png",
 
-                        },
-                PowersId = 2,
-                Powers = { Id = 2,
 
-                            Name = "Invisibility",
-                            },
-            }
-);
-            modelBuilder.Entity<Heros>().HasData(new HeroPower()
-            {
-                HerosId = 1,
-                Heros = {   Id = 1,
-                            FirstName = "Christopher",
-                            LastName = "Hemsworth",
-                            Age = 40,
-                            NameHero = "Thor",
-                            Description = "Leading The Most Powerful Superheroes And Villains",
-                            gender = "male",
-                            photo = "/Images/photoHero/Thor.png",
+            //            modelBuilder.Entity<Powers>().HasData(new Powers
+            //            {
 
 
 
-                        },
-                PowersId = 3,
-                Powers = {  Id = 3,
+            //                Id = 1,
+            //                Name = "Invisibility",
 
-                            Name = "Shapeshifting" },
-            }
-);
-            modelBuilder.Entity<Heros>().HasData(new HeroPower()
-            {
-                HerosId = 1,
-                Heros = {   Id = 1,
-                            FirstName = "Christopher",
-                            LastName = "Hemsworth",
-                            Age = 40,
-                            NameHero = "Thor",
-                            Description = "Leading The Most Powerful Superheroes And Villains",
-                            gender = "male",
-                            photo = "/Images/photoHero/Thor.png",
-                        },
-                PowersId = 3,
-                Powers = {  Id = 3,
 
-                            Name = "Shapeshifting" },
-            }
-);
-            modelBuilder.Entity<Heros>().HasData(new HeroPower()
-            {
-                HerosId = 9,
-                Heros = {   Id = 9,
-                            FirstName = "Melissa",
-                            LastName = "Benoist",
-                            Age = 25,
-                            NameHero = "Supergirl",
-                            Description = "Supergirl is a fictional superhero created for DC comics by Otto Binder, first appearing in The Supergirl from Krypton.",
-                            gender = "female",
-                            photo = "/Images/photoHero/Supergirl.jpg"},
-                PowersId = 3,
-                Powers =  {  Id = 3,
 
-                            Name = "Shapeshifting"} 
-            }
-);
-            modelBuilder.Entity<Heros>().HasData(new HeroPower()
-            {
-                HerosId = 9,
-                Heros = {  Id = 9,
-                            FirstName = "Melissa",
-                            LastName = "Benoist",
-                            Age = 25,
-                            NameHero = "Supergirl",
-                            Description = "Supergirl is a fictional superhero created for DC comics by Otto Binder, first appearing in The Supergirl from Krypton.",
-                            gender = "female",
-                            photo = "/Images/photoHero/Supergirl.jpg" },
-                PowersId = 5,   
-                    Powers = {   Id = 5,
+            //            }
+            //       );
+            //            modelBuilder.Entity<Heros>().HasData(new Heros()
+            //            {
 
-                            Name = "Super Speed"
 
-                         },
-            }
-);
-            modelBuilder.Entity<Heros>().HasData(new HeroPower()
-            {
-                HerosId = 9,
-                Heros = { Id = 9,
-                            FirstName = "Melissa",
-                            LastName = "Benoist",
-                            Age = 25,
-                            NameHero = "Supergirl",
-                            Description = "Supergirl is a fictional superhero created for DC comics by Otto Binder, first appearing in The Supergirl from Krypton.",
-                            gender = "female",
-                            photo = "/Images/photoHero/Supergirl.jpg" },
-                PowersId = 6,
-                Powers = {  Id = 6,
 
-                            Name = "Super Strength",
+            //                Id = 1,
+            //                FirstName = "Christopher",
+            //                LastName = "Hemsworth",
+            //                Age = 40,
+            //                NameHero = "Thor",
+            //                Description = "Leading The Most Powerful Superheroes And Villains",
+            //                gender = "male",
+            //                photo = "/Images/photoHero/Thor.png",
 
-                        },
-            }
-);
+
+
+
+            //            });
+
+
+
+
+
+
+
+            //            modelBuilder.Entity<HeroPower>().HasData(new HeroPower()
+            //            {
+            //                Id = 1,
+            //                HerosId = 1,
+            //                PowersId = 1,
+
+
+
+            //            }
+            //);
+            //            modelBuilder.Entity<Heros>().HasData(new HeroPower()
+            //            {
+            //                Id = 2,
+            //                HerosId = 1,
+
+            //                PowersId = 3,
+
+            //            }
+            //);
+            //            modelBuilder.Entity<Heros>().HasData(new HeroPower()
+            //            {
+            //                Id=3,
+            //                HerosId = 1,
+
+            //                PowersId = 3,
+
+            //            }
+            //);
+            //            modelBuilder.Entity<Heros>().HasData(new HeroPower()
+            //            {
+            //                Id=4,
+            //                HerosId = 9,
+
+            //                PowersId = 3,
+
+            //            }
+            //);
+            //            modelBuilder.Entity<Heros>().HasData(new HeroPower()
+            //            {
+            //                Id=5,
+            //                HerosId = 9,
+
+            //                PowersId = 5,   
+
+            //            }
+            //);
+            //            modelBuilder.Entity<Heros>().HasData(new HeroPower()
+            //            {
+            //                Id=6,
+            //                HerosId = 9,
+
+            //                PowersId = 6,
+
+            //            }
+            //);
+            //            modelBuilder.Entity<Powers>().HasData(new Powers
+            //            {
+
+
+
+            //                Id = 1,
+            //                Name = "Invisibility",
+
+
+
+            //            }
+            //);
+            //            modelBuilder.Entity<Heros>().HasData(new Heros()
+            //            {
+
+
+
+            //                Id = 1,
+            //                FirstName = "Christopher",
+            //                LastName = "Hemsworth",
+            //                Age = 40,
+            //                NameHero = "Thor",
+            //                Description = "Leading The Most Powerful Superheroes And Villains",
+            //                gender = "male",
+            //                photo = "/Images/photoHero/Thor.png",
+
+
+
+
+            //            });
+
+
+
+
+
+
+
+            //            modelBuilder.Entity<HeroPower>().HasData(new HeroPower()
+            //            {
+            //                Id = 1,
+            //                HerosId = 1,
+            //                PowersId = 1,
+
+
+
+            //            }
+            //);
+            //        }
+
         }
+    
     }
+
 }

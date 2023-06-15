@@ -18,7 +18,7 @@ namespace Application.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Age = table.Column<int>(type: "int", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: true),
                     NameHero = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     photo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     gender = table.Column<string>(type: "nvarchar(max)", nullable: false),

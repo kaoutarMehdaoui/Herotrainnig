@@ -11,7 +11,7 @@ namespace Domain.Models
         [Required, StringLength(50), RegularExpression(@"[A-Za-z]", ErrorMessage = "Characters are not allowed in LastName.")]
         public string LastName { get; set; }
 
-        [Required, Range(5, 90, ErrorMessage = "The age must be between 5 and 90 years old.")]
+        [ Range(5, 90, ErrorMessage = "The age must be between 5 and 90 years old.")]
         public int Age { get; set; }
 
         [Required, DisplayName("Hero Name"), StringLength(50)]
