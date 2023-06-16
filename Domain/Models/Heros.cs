@@ -5,10 +5,10 @@ namespace Domain.Models
 {
     public class Heros : Comman
     {
-        [Required, StringLength(50), RegularExpression(@"[A-Za-z]", ErrorMessage = "Characters are not allowed.")]
+        [Required, StringLength(50), RegularExpression("^[A-Za-z]+$", ErrorMessage = "Characters are not allowed.")]
         public string FirstName { get; set; }
 
-        [Required, StringLength(50), RegularExpression(@"[A-Za-z]", ErrorMessage = "Characters are not allowed in LastName.")]
+        [Required, StringLength(50), RegularExpression("^[A-Za-z]+$", ErrorMessage = "Characters are not allowed in LastName.")]
         public string LastName { get; set; }
 
         [ Range(5, 90, ErrorMessage = "The age must be between 5 and 90 years old.")]

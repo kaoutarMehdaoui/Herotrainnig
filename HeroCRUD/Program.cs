@@ -1,5 +1,6 @@
 using Application.Data;
 using Application.Repository;
+using HeroCRUD.Mapper;
 using Infrastructur.Contrat;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
@@ -13,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped(typeof(IGenerique<>),typeof(GeneriqueImp<>));
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 var app = builder.Build();
 

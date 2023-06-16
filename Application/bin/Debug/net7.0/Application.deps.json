@@ -680,7 +680,8 @@
       },
       "Infrastructur/1.0.0": {
         "dependencies": {
-          "Domain": "1.0.0"
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.5"
         },
         "runtime": {
           "Infrastructur.dll": {}

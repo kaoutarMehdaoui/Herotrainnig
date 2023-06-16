@@ -2,10 +2,14 @@
 using Domain.Models;
 using Infrastructur.Contrat;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Application.Repository
@@ -29,6 +33,24 @@ namespace Application.Repository
         public IReadOnlyList<T> GetAll()
         {
             return _dbSet.ToList();
+        }
+        public string  GetAll(Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null)
+        {
+            IQueryable<T> query = _dbSet;
+
+            if (include != null)
+
+            {
+
+                query = include(query);
+
+            }
+            var data = query.ToList();
+            var options = new JsonSerializerOptions { ReferenceHandler = ReferenceHandler.Preserve };
+            var serializedData = JsonSerializer.Serialize(data, options); // Return the serialized data
+            return serializedData;
+
+            
         }
 
         public T getOne(int id)
