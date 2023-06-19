@@ -540,9 +540,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructur.csproj",
-      "projectName": "Infrastructur",
-      "projectPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructur.csproj",
+      "projectUniqueName": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructure.csproj",
+      "projectName": "Infrastructure",
+      "projectPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Kmehdaoui\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\obj\\",
       "projectStyle": "PackageReference",
