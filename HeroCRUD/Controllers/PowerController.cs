@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Domain.Models;
 using HeroCRUD.ModelDTO;
-using Infrastructur.Contrat;
+
+using Infrastructure.Contrat;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

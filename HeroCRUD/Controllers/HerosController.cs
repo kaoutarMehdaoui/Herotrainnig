@@ -1,13 +1,9 @@
 ﻿using Domain.Models;
-using Infrastructur.Contrat;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using HeroCRUD.Mapper;
 using HeroCRUD.ModelDTO;
 using AutoMapper;
+using Infrastructure.Contrat;
 
 namespace HeroCRUD.Controllers
 {

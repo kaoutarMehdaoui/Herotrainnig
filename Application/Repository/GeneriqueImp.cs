@@ -1,16 +1,10 @@
 ﻿using Application.Data;
 using Domain.Models;
-using Infrastructur.Contrat;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 using System.Text.Json.Serialization;
 using System.Text.Json;
-using System.Threading.Tasks;
+using Infrastructure.Contrat;
 
 namespace Application.Repository
 {
