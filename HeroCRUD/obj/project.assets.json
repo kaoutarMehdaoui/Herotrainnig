@@ -1445,7 +1445,6 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Infrastructur": "1.0.0",
           "Infrastructure": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5"
@@ -1465,20 +1464,6 @@
         },
         "runtime": {
           "bin/placeholder/Domain.dll": {}
-        }
-      },
-      "Infrastructur/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.5"
-        },
-        "compile": {
-          "bin/placeholder/Infrastructur.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Infrastructur.dll": {}
         }
       },
       "Infrastructure/1.0.0": {
@@ -4561,11 +4546,6 @@
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
-    },
-    "Infrastructur/1.0.0": {
-      "type": "project",
-      "path": "../Infrastructur/Infrastructur.csproj",
-      "msbuildProject": "../Infrastructur/Infrastructur.csproj"
     },
     "Infrastructure/1.0.0": {
       "type": "project",

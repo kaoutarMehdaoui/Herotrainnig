@@ -1143,20 +1143,6 @@
           "bin/placeholder/Domain.dll": {}
         }
       },
-      "Infrastructur/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.5"
-        },
-        "compile": {
-          "bin/placeholder/Infrastructur.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Infrastructur.dll": {}
-        }
-      },
       "Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3496,21 +3482,15 @@
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
     },
-    "Infrastructur/1.0.0": {
-      "type": "project",
-      "path": "../Infrastructur/Infrastructur.csproj",
-      "msbuildProject": "../Infrastructur/Infrastructur.csproj"
-    },
     "Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../Infrastructur/Infrastructure.csproj",
-      "msbuildProject": "../Infrastructur/Infrastructure.csproj"
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Domain >= 1.0.0",
-      "Infrastructur >= 1.0.0",
       "Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
@@ -3553,11 +3533,8 @@
             "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructur.csproj": {
-              "projectPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructur.csproj"
-            },
-            "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructure.csproj"
+            "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
