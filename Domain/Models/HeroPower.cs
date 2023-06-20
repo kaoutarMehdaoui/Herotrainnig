@@ -2,7 +2,7 @@
 
 namespace Domain.Models
 {
-    public class HeroPower : Comman
+    public class HeroPower : Common
     {
         [ForeignKey("HeroId")]
         public int HerosId { get; set; }

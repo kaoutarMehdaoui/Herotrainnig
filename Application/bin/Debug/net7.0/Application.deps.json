@@ -10,6 +10,7 @@
         "dependencies": {
           "Domain": "1.0.0",
           "Infrastructur": "1.0.0",
+          "Infrastructure": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Design": "7.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
@@ -678,13 +679,13 @@
           "Domain.dll": {}
         }
       },
-      "Infrastructur/1.0.0": {
+      "Infrastructure/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5"
         },
         "runtime": {
-          "Infrastructur.dll": {}
+          "Infrastructure.dll": {}
         }
       }
     }
@@ -1169,7 +1170,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Infrastructur/1.0.0": {
+    "Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

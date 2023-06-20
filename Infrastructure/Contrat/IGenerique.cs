@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace Infrastructur.Contrat
 {
-    public interface IGenerique<T> where T : Comman
+    public interface IGenerique<T> where T : Common
     {
         IReadOnlyList<T> GetAll();
         string  GetAll(Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null);

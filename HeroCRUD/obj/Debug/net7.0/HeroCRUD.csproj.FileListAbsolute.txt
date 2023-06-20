@@ -77,8 +77,6 @@ C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\refint\HeroCR
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.pdb
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.genruntimeconfig.cache
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\ref\HeroCRUD.dll
-C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\Infrastructur.dll
-C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\Infrastructur.pdb
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\obj\Debug\net7.0\HeroCRUD.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\AutoMapper.Extensions.ExpressionMapping.dll
@@ -95,3 +93,5 @@ C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\runtimes\win-
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\Infrastructure.dll
+C:\Users\Kmehdaoui\source\repos\HeroCRUD\HeroCRUD\bin\Debug\net7.0\Infrastructure.pdb

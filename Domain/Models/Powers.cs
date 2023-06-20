@@ -1,6 +1,6 @@
 ﻿namespace Domain.Models
 {
-    public class Powers : Comman
+    public class Powers : Common
     {
         public string Name { get; set; }
 

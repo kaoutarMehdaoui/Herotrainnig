@@ -1,0 +1,14 @@
+﻿################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+################################################################################
+
+/HeroCRUD.sln
+#ignore bin and obj 
+/Application/bin/
+/Application/obj/
+/Domain/bin/
+/Domain/obj/
+/HeroCRUD/bin
+/HeroCRUD/obj
+/Infrastructure/bin
+/Infrastructure/obj

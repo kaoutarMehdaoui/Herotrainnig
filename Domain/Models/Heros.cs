@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Models
 {
-    public class Heros : Comman
+    public class Heros : Common
     {
         [Required, StringLength(50), RegularExpression("^[A-Za-z]+$", ErrorMessage = "Characters are not allowed.")]
         public string FirstName { get; set; }

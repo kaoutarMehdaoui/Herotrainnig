@@ -1156,6 +1156,20 @@
         "runtime": {
           "bin/placeholder/Infrastructur.dll": {}
         }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.5"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -3486,12 +3500,18 @@
       "type": "project",
       "path": "../Infrastructur/Infrastructur.csproj",
       "msbuildProject": "../Infrastructur/Infrastructur.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructur/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructur/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Domain >= 1.0.0",
       "Infrastructur >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
@@ -3535,6 +3555,9 @@
             },
             "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructur.csproj": {
               "projectPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructur.csproj"
+            },
+            "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Kmehdaoui\\source\\repos\\HeroCRUD\\Infrastructur\\Infrastructure.csproj"
             }
           }
         }

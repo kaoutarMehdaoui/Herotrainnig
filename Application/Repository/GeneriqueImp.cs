@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Repository
 {
-    public class GeneriqueImp<T> : IGenerique<T> where T : Comman
+    public class GeneriqueImp<T> : IGenerique<T> where T : Common
     {
         private readonly MyContext _context;
         private readonly DbSet<T> _dbSet;

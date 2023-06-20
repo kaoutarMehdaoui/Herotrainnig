@@ -43,7 +43,7 @@ namespace HeroCRUD.Controllers
         }
         [HttpGet]
         [Route("/Join")]
-        public ActionResult<string> GetAllHeroWithInclude()
+        public ActionResult<string> getHeroesIncludingPowers()
         {
             try
             {
