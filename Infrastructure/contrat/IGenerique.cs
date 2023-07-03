@@ -5,11 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
-
-namespace Infrastructure
+namespace Infrastructure.contrat
 {
+
     public interface IGenerique<T> where T : Common
     {
         IReadOnlyList<T> GetAll();
@@ -19,4 +18,5 @@ namespace Infrastructure
         void UpdateOne(T item);
         T getOne(int id);
     }
+
 }

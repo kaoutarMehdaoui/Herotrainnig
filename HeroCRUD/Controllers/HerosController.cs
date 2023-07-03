@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HeroCRUD.ModelDTO;
 using AutoMapper;
-using Infrastructure.Contrat;
+
+using Infrastructure.contrat;
 
 namespace HeroCRUD.Controllers
 {

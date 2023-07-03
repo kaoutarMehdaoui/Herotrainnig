@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Text.Json.Serialization;
 using System.Text.Json;
-using Infrastructure;
+using Infrastructure.contrat;
 
 namespace Application.Repository
 {

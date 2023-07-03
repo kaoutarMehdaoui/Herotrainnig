@@ -1,8 +1,7 @@
 using Application.Data;
 using Application.Repository;
 using HeroCRUD.Mapper;
-
-using Infrastructure.Contrat;
+using Infrastructure.contrat;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 
