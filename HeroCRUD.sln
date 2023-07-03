@@ -15,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{A7E3BED6-9177-4879-9C3B-BC4C75A24124}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{1F2B0D16-8935-4309-831E-7CE4FEBAB9E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{1F2B0D16-8935-4309-831E-7CE4FEBAB9E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHero", "BlazorHero\BlazorHero.csproj", "{595D59D5-5FC1-4AA2-9FC8-5D9D0BB2263A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorHero", "BlazorHero\BlazorHero.csproj", "{595D59D5-5FC1-4AA2-9FC8-5D9D0BB2263A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{8278EA46-B0BF-4362-92C4-C60E4773EB90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{8278EA46-B0BF-4362-92C4-C60E4773EB90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,49 @@
+﻿@page "/Heros"
+
+@inherits HeroBase
+
+<h3>Heros</h3>
+@if (HeroReturnedFromAPI==null)
+{
+    <p>lodaing Products ... </p>
+}
+else
+{
+    <h3> list of heros</h3>
+    var herosCount = HeroReturnedFromAPI.Count();
+    if(herosCount>0)
+    {
+        const int HerosPerRow = 4;
+        var HeroList = new List<HeroDTO>();
+        for(int i=0; i<herosCount;  i++ )
+        {
+            HeroList = HeroReturnedFromAPI.Skip(i * HerosPerRow).Take(HerosPerRow).ToList();
+            <div class="row mt-3">
+                @foreach(var item in HeroList)
+                {
+                    <div class="row md-3 mb-2">
+                    <a href="#">
+                        <div class="card">
+                            <img class="img-thumbnail" src="@item.photo">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                     @item.NameHero
+                                </h5>
+                                <p class="card-text">
+                                        @($"{item.Age} ans")<br>
+                                        @item.Description
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                }
+                
+
+            </div>
+
+        }
+    }
+}
+
+

@@ -3,6 +3,7 @@ using Application.Repository;
 using HeroCRUD.Mapper;
 using Infrastructure.contrat;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 using System.Reflection.Emit;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors(policy =>
+policy.WithOrigins("https://localhost:7263", "https://localhost:7263")
+.AllowAnyMethod()
+.WithHeaders(HeaderNames.ContentType)
+);
 
 app.UseHttpsRedirection();
 
