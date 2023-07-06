@@ -2,47 +2,72 @@
 
 @inherits HeroBase
 
-<h3>Heros</h3>
+
 @if (HeroReturnedFromAPI==null)
 {
     <p>lodaing Products ... </p>
 }
 else
 {
-    <h3> list of heros</h3>
+    <h5> Add New Hero </h5>
+    <a href="/AddHero" class="btn btn-custom" role="button">
+        <i class="fas fa-user-plus"></i>
+        Add Hero
+    </a>
+    <h4> Heros</h4>
     var herosCount = HeroReturnedFromAPI.Count();
     if(herosCount>0)
     {
-        const int HerosPerRow = 4;
+       @*_______________________________________   this section return list of Heros -------------------------------------*@
+         
+       
+       @* const int HerosPerRow = 4;
         var HeroList = new List<HeroDTO>();
         for(int i=0; i<herosCount;  i++ )
         {
-            HeroList = HeroReturnedFromAPI.Skip(i * HerosPerRow).Take(HerosPerRow).ToList();
+            HeroList = HeroReturnedFromAPI.Skip(i * HerosPerRow).Take(HerosPerRow).ToList();*@
+
+
+           @* -------------------------------- this section retourn list filtred by gender ----------------------------------------- *@
+        @foreach (var item in GetGroupedHeroByGender())
+        {
+            
             <div class="row mt-3">
-                @foreach(var item in HeroList)
+                @foreach (var hero in item.Take(4))
                 {
-                    <div class="row md-3 mb-2">
-                    <a href="#">
-                        <div class="card">
-                            <img class="img-thumbnail" src="@item.photo">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                     @item.NameHero
-                                </h5>
-                                <p class="card-text">
-                                        @($"{item.Age} ans")<br>
-                                        @item.Description
-                                </p>
+                    <div class="col-md-3 mb-2">
+                        <a href="#">
+                            <div class="card">
+                                <img class="img-thumbnail" src="@hero.photo">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        @hero.NameHero
+                                    </h5>
+                                    <p class="card-text">
+                                        @($"{hero.Age} ans")<br>
+                                        @hero.Description
+                                    </p>
+                                    <div class="card-buttons">
+                                        <a href="/EditHero" class="btn btn-custom-edit" role="button">
+                                            Edit
+                                        </a>
+                                        <a href="/DeleteHero" class="btn-custom-delete" role="button">
+                                            Delete
+                                        </a>
+                                    </div>
+                                    
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
                     </div>
                 }
-                
+
 
             </div>
-
         }
+        
+
+        
     }
 }
 

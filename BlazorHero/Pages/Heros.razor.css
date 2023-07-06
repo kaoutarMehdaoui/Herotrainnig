@@ -1,0 +1,107 @@
+﻿body{
+
+}
+h5,h4{
+    color :#174465;
+}
+a {
+    text-decoration: none;
+    color: #3a0647 !important;
+}
+.btn-custom {
+    background-color: #f6e6fb;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    border: 1px solid #f6e6fb;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+ .btn-custom:hover {
+        background-color: #3a0647;
+    }
+a.btn-custom:hover {
+    color: #f6e6fb !important;
+}
+.btn-custom-edit {
+    background-color: #f6e6fb;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px;
+    border: 1px solid #3a0647;
+    border-color: #3a0647;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+    .btn-custom-edit:hover {
+        background-color: #3a0647;
+    }
+
+a.btn-custom-edit:hover {
+    color: #f6e6fb !important;
+}
+.btn-custom-delete {
+    background-color: #d93d30;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding :15px 15px;
+    border: 1px solid #f6e6fb;
+    border-color: #f6e6fb;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+    .btn-custom-delete:hover {
+        background-color: #f6e6fb;
+        border-color: #d93d30;
+    }
+
+a.btn-custom-delete:hover {
+    color: #d93d30 !important;
+}
+a.btn-custom-delete {
+    color: #f6e6fb !important;
+}
+a:hover .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card {
+    transition: box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:#f6e6fb; /* Optional: Background color for better visualization */
+    padding: 20px;
+}
+.card-body {
+    flex-grow: 1; /* Allow the card body to take up remaining vertical space */
+}
+a:hover img {
+    transform: scale(1.07);
+    transition: 0.5s ease-in-out;
+}
+
+img {
+    transition: 0.5s ease-in-out;
+}
+.card-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+
+    
+}
+a.card-buttons{
+    color:azure !important
+}
