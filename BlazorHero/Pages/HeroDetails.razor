@@ -1,0 +1,56 @@
+﻿@page "/HeroDetails/{Id:int}"
+@inherits HeroDetailsBase
+
+
+@if (HeroDTODetails == null && ErroMessage == null)
+{
+    <h3> Loading Hero details ...</h3>
+}
+else if (ErroMessage != null)
+{
+    <h3 class="text-danger">@ErroMessage</h3>
+}
+else
+{
+    <h3 class="mb-5">@HeroDTODetails.NameHero Details</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="image-container">
+                        <img class="img-fluid" src="@HeroDTODetails.photo" alt="Hero Image" />
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h5 class="card-title">@HeroDTODetails.NameHero</h5>
+                    <hr />
+                    <p class="card-text">
+                       <p class="text-black"><strong>The name of actor : </strong> @HeroDTODetails.FirstName @HeroDTODetails.LastName</p> 
+                    </p>
+                    <p class="card-text">
+                       <p class="text-dark"><strong>Age:</strong> @HeroDTODetails.Age years </p> 
+                    </p>
+                    <p class="card-text">
+                       <p class="text-dark"> <strong>Description:</strong> @HeroDTODetails.Description</p>
+                    </p>
+                    <p class="card-text">
+                    <p class="text-dark"><strong>Gender:</strong> @HeroDTODetails.gender</P>
+                    </p>
+                    <p class="card-buttons">
+                        <a href="/EditHero/@HeroDTODetails.Id" class="btn btn-custom-edit" role="button">
+                                            Edit
+                                        </a>
+                                        <a href="/DeleteHero" class="btn-custom-delete" role="button">
+                                            Delete
+                                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+

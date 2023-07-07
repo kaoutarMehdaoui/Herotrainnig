@@ -1,6 +1,8 @@
 ﻿using BlazorHero.Services.Contracts;
+using Domain.Models;
 using HeroCRUD.ModelDTO;
 using System.Net.Http.Json;
+using static System.Net.WebRequestMethods;
 
 namespace BlazorHero.Services
 {
@@ -10,6 +12,16 @@ namespace BlazorHero.Services
         public HeroService(HttpClient httpClient)
         {
             _httpClient = httpClient;
+        }
+
+        public Task AddHero(HeroDTO heroDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteHero(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IReadOnlyList<HeroDTO>> GetAllHeros()
@@ -39,6 +51,23 @@ namespace BlazorHero.Services
                 throw;
             }
 
+        }
+
+        public async  Task<Heros> GetHeroById(int id)
+        {
+           
+           
+                var result = await _httpClient.GetFromJsonAsync<Heros>($"api/Heros/{id}");
+                if (result != null)
+                    return result;
+                throw new Exception("Hero not found!");
+
+            
+        }
+
+        public Task UpdateHero(HeroDTO heroDTO)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,0 +1,73 @@
+﻿h5
+{
+    color:rebeccapurple !important;
+    font-family:'Gill Sans', 'Gill Sans MT';
+    font-size:50px;
+    h
+}
+strong {
+    color: rebeccapurple !important;
+    font-family:'Gill Sans', 'Gill Sans MT';
+    font-size:20px;
+}
+.mb-5 {
+    color: rebeccapurple !important;
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    font-size: 50px;
+}
+.img-fluid {
+    border-radius: 3px;
+    padding: revert-layer;
+}
+
+.btn-custom-edit {
+    background-color: #3a0647;
+    color: #f6e6fb;
+    display: flex;
+    justify-content: center;
+    padding: 15px 40px;
+    border: 1px solid #3a0647;
+    border-color: #3a0647;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+    .btn-custom-edit:hover {
+        background-color: #f6e6fb;
+    }
+
+a.btn-custom-edit:hover {
+    color: #3a0647 !important;
+}
+
+.btn-custom-delete {
+    background-color: #d93d30;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 15px 40px;
+    border: 1px solid #f6e6fb;
+    border-color: #f6e6fb;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+    .btn-custom-delete:hover {
+        background-color: #f6e6fb;
+        border-color: #d93d30;
+    }
+
+a.btn-custom-delete:hover {
+    color: #d93d30 !important;
+}
+
+a.btn-custom-delete {
+    color: #f6e6fb !important;
+}
+.card-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}

@@ -21,7 +21,7 @@ namespace HeroCRUD.Controllers
             _Mapper = mapperConfig;
             
         }
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public ActionResult<Heros> GetHero(int id )
         {
             try

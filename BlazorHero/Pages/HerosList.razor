@@ -36,9 +36,9 @@ else
                 @foreach (var hero in item.Take(4))
                 {
                     <div class="col-md-3 mb-2">
-                        <a href="#">
+                        <a href="/HeroDetails/@hero.Id">
                             <div class="card">
-                                <img class="img-thumbnail" src="@hero.photo">
+                                <img class="rounded-1" src="@hero.photo">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         @hero.NameHero
@@ -48,7 +48,7 @@ else
                                         @hero.Description
                                     </p>
                                     <div class="card-buttons">
-                                        <a href="/EditHero" class="btn btn-custom-edit" role="button">
+                                        <a href="/EditHero/@hero.Id" class="btn btn-custom-edit" role="button">
                                             Edit
                                         </a>
                                         <a href="/DeleteHero" class="btn-custom-delete" role="button">
