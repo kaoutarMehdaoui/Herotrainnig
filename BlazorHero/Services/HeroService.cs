@@ -1,6 +1,7 @@
 ﻿using BlazorHero.Services.Contracts;
 using Domain.Models;
 using HeroCRUD.ModelDTO;
+using Microsoft.JSInterop;
 using System.Net.Http.Json;
 using static System.Net.WebRequestMethods;
 
@@ -14,9 +15,33 @@ namespace BlazorHero.Services
             _httpClient = httpClient;
         }
 
-        public Task AddHero(HeroDTO heroDTO)
+        public async Task AddHero(HeroDTO heroDTO)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var reponse = await _httpClient.PostAsJsonAsync<HeroDTO>("api/Heros", heroDTO);
+
+                if (reponse.IsSuccessStatusCode)
+                {
+                    if (reponse.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return ;
+                    }
+
+                    HeroDTO heroDTOAdd= await reponse.Content.ReadFromJsonAsync<HeroDTO>();
+                   
+                }
+                else
+                {
+                    var message = await reponse.Content.ReadAsStringAsync();
+                    throw new Exception($"Http status code: {reponse.StatusCode} message: {message}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public Task DeleteHero(int id)

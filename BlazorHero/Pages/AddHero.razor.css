@@ -1,0 +1,10 @@
+﻿button {
+    margin-top: 20px;
+}
+.card {
+    background: linear-gradient(#3a0647,#c9d1ee); /* Set the desired purple background color */
+    color: white;
+    font-size:medium;
+    width:auto
+
+}

@@ -10,6 +10,7 @@ namespace BlazorHero.Pages
         [Inject]
         public IHeroService _heroService { get; set; }
         public IReadOnlyList<HeroDTO> HeroReturnedFromAPI { get; set;}
+        
        
         protected override async Task OnInitializedAsync()
         {
@@ -23,7 +24,7 @@ namespace BlazorHero.Pages
             var result = from hero in HeroReturnedFromAPI group hero by hero.gender into heroByGender orderby heroByGender.Key select heroByGender;
             return result;
         }
-        
+       
        
        
 
