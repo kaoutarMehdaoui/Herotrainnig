@@ -10,6 +10,8 @@ namespace BlazorHero.Pages
     {
         [Parameter]
         public int Id { get; set; }
+        [Inject]
+        protected NavigationManager NavigationManager { get; set; }
         public HeroDTO HeroToAdd = new HeroDTO()
         {
             photo = "",
@@ -19,11 +21,8 @@ namespace BlazorHero.Pages
         public string ErrorMessage { get; set; }
         [Inject]
         public IHeroService _heroService { get; set; }
-        private EditContext editContext;
-        protected override async Task OnInitializedAsync()
-        {
-            editContext=new EditContext(HeroToAdd);
-        }
+       
+        
         protected async Task AddHeroClick()
         {
            
@@ -40,5 +39,10 @@ namespace BlazorHero.Pages
                 ErrorMessage = ex.Message;
             }
         }
+        protected void Cancel() 
+        {
+            NavigationManager.NavigateTo("/Heros");
+        }
+
     }
 }

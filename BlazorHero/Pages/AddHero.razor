@@ -1,12 +1,14 @@
 ﻿@page "/AddHero"
 @page "/EditHero/{Id:int}"
 @inherits AddHeroBase
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container-fluid">
+    <div class="row">
+
+       
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Add New Hero</h3>
+                    <h3 class="card-title text-center">Add New Hero</h3>
 
                     <EditForm Model="@HeroToAdd" OnValidSubmit="@AddHeroClick">
                         <DataAnnotationsValidator />
@@ -49,18 +51,25 @@
 
                         <div class="form-group">
                             <label for="description">Description:</label>
-                            <InputText id="description" class="form-control" rows="4" @bind-Value="HeroToAdd.Description" />
+                            <textarea id="description" class="form-control" rows="4" @bind="HeroToAdd.Description"></textarea>
                             <ValidationMessage For="@(() => HeroToAdd.Description)" />
                         </div>
 
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Save </button>
-                            <button type="button" class="btn btn-outline-danger">Cancel</button>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-custom-edit">Save </button>
+                            <button type="button" class="btn btn-outline-danger" @onclick="@Cancel">Cancel</button>
                         </div>
                     </EditForm>
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div>
+                <img src="/Images/add.png" class="img-fluid rounded-pill" alt="...">
+            </div>
+        </div>
     </div>
+    
 </div>
+
 

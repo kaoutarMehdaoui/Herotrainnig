@@ -2,9 +2,37 @@
     margin-top: 20px;
 }
 .card {
-    background: linear-gradient(#3a0647,#c9d1ee); /* Set the desired purple background color */
-    color: white;
+   
+    border-block-color:aqua
     font-size:medium;
     width:auto
 
+}
+label {
+    color: #602473
+}
+.card-title {
+    color: #9d28c1;
+    position:center !important
+    
+}
+.btn-custom-edit {
+    background-color:white;
+    color: #3a0647;
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px;
+    border: 1px solid #3a0647;
+    border-color: #3a0647;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+    .btn-custom-edit:hover {
+        background-color: #3a0647;
+    }
+
+button.btn-custom-edit:hover {
+    color: white !important;
 }

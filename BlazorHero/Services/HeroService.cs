@@ -44,9 +44,29 @@ namespace BlazorHero.Services
             }
         }
 
-        public Task DeleteHero(int id)
+        public  async Task DeleteHero(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var reponse = await _httpClient.DeleteAsync($"api/Heros/{id}");
+                if (reponse.IsSuccessStatusCode)
+                {
+                    
+                    Heros herosToDelete = await reponse.Content.ReadFromJsonAsync<Heros>();
+
+                }
+                 else
+                {
+                    var message = await reponse.Content.ReadAsStringAsync();
+                    throw new Exception($"Http status code: {reponse.StatusCode} message: {message}");
+                }
+
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+
         }
 
         public async Task<IReadOnlyList<HeroDTO>> GetAllHeros()

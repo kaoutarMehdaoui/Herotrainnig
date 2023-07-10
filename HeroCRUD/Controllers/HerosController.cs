@@ -94,7 +94,7 @@ namespace HeroCRUD.Controllers
             }
 
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public ActionResult DeleteHero(int id)
         {
             try
