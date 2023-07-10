@@ -1,5 +1,6 @@
 ﻿using BlazorHero.Services.Contracts;
 using Domain.Models;
+using HeroCRUD.ModelDTO;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorHero.Pages
@@ -10,7 +11,7 @@ namespace BlazorHero.Pages
         public int Id { get; set; }
         [Inject]
         public IHeroService _heroService { get; set; }
-        public Heros HeroDTODetails = new Heros();
+        public HeroDTO HeroDTODetails = new HeroDTO();
         public string? ErroMessage { get; set; }
         protected override async Task OnInitializedAsync()
         {

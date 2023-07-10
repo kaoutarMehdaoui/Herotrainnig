@@ -3,6 +3,7 @@ using Domain.Models;
 using HeroCRUD.ModelDTO;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using System.Runtime.CompilerServices;
 
 namespace BlazorHero.Pages
 {
@@ -21,18 +22,36 @@ namespace BlazorHero.Pages
         public string ErrorMessage { get; set; }
         [Inject]
         public IHeroService _heroService { get; set; }
-       
-        
+
+       protected async override Task OnInitializedAsync()
+        {
+            if(Id != null && Id!=0) 
+            {
+                HeroToAdd = await _heroService.GetHeroById(Id);
+
+            }
+            else
+            {
+                HeroToAdd = new HeroDTO() { };
+            }
+        }
+
+
         protected async Task AddHeroClick()
         {
            
-
-
             try
             {
+                if (Id != null && Id !=0) {
+
+                    await _heroService.UpdateHero(HeroToAdd, NavigationManager);
+                }
+                else
+                {
+                    await _heroService.AddHero(HeroToAdd, NavigationManager);
+                    Console.WriteLine("Hero added successfully!");
+                }
                 
-                await _heroService.AddHero(HeroToAdd);
-                Console.WriteLine("Hero added successfully!");
             }
             catch (Exception ex)
             {

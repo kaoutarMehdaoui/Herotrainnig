@@ -1,8 +1,11 @@
 ﻿using BlazorHero.Services.Contracts;
 using Domain.Models;
 using HeroCRUD.ModelDTO;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using System.Net.Http.Json;
+using System.Text;
+using System.Text.Json;
 using static System.Net.WebRequestMethods;
 
 namespace BlazorHero.Services
@@ -10,12 +13,13 @@ namespace BlazorHero.Services
     public class HeroService :IHeroService 
     {
         private readonly HttpClient _httpClient;
+   
         public HeroService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
 
-        public async Task AddHero(HeroDTO heroDTO)
+        public async Task AddHero(HeroDTO heroDTO, NavigationManager navigation)
         {
             try
             {
@@ -26,9 +30,11 @@ namespace BlazorHero.Services
                     if (reponse.StatusCode == System.Net.HttpStatusCode.NoContent)
                     {
                         return ;
+                        
                     }
-
+                    navigation.NavigateTo("/Heros");
                     HeroDTO heroDTOAdd= await reponse.Content.ReadFromJsonAsync<HeroDTO>();
+                    
                    
                 }
                 else
@@ -44,15 +50,15 @@ namespace BlazorHero.Services
             }
         }
 
-        public  async Task DeleteHero(int id)
+        public  async Task DeleteHero(int id,NavigationManager navigationManager)
         {
             try
             {
                 var reponse = await _httpClient.DeleteAsync($"api/Heros/{id}");
                 if (reponse.IsSuccessStatusCode)
                 {
-                    
-                    Heros herosToDelete = await reponse.Content.ReadFromJsonAsync<Heros>();
+
+                    navigationManager.NavigateTo("/Heros");
 
                 }
                  else
@@ -98,11 +104,11 @@ namespace BlazorHero.Services
 
         }
 
-        public async  Task<Heros> GetHeroById(int id)
+        public async  Task<HeroDTO> GetHeroById(int id)
         {
            
            
-                var result = await _httpClient.GetFromJsonAsync<Heros>($"api/Heros/{id}");
+                var result = await _httpClient.GetFromJsonAsync<HeroDTO>($"api/Heros/{id}");
                 if (result != null)
                     return result;
                 throw new Exception("Hero not found!");
@@ -110,9 +116,28 @@ namespace BlazorHero.Services
             
         }
 
-        public Task UpdateHero(HeroDTO heroDTO)
+        public async Task UpdateHero(HeroDTO heroDTO, NavigationManager navigation)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                var rep = await _httpClient.PutAsJsonAsync<HeroDTO>("api/Heros", heroDTO);
+                if(rep.IsSuccessStatusCode)
+                {
+                    navigation.NavigateTo("/Heros");
+                }
+                else
+                {
+                    var message = await rep.Content.ReadAsStringAsync();
+                    throw new Exception($"Http status code: {rep.StatusCode} message: {message}");
+                }
+
+
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

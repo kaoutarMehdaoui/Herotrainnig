@@ -22,16 +22,17 @@ namespace HeroCRUD.Controllers
             
         }
         [HttpGet("{id}")]
-        public ActionResult<Heros> GetHero(int id )
+        public ActionResult<HeroDTO>GetHero(int id )
         {
             try
             {
                 Heros HeroReturned = _Hero.getOne(id);
+                HeroDTO heroToreturn = _Mapper.Map<HeroDTO>(HeroReturned);
                 if (HeroReturned == null)
                 {
                     return NotFound();
                 }
-                return HeroReturned;
+                return heroToreturn;
             }catch (Exception ex)
             {
                 return NotFound(ex.Message);

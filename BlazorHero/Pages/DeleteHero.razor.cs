@@ -1,6 +1,7 @@
 ﻿using BlazorHero.Services;
 using BlazorHero.Services.Contracts;
 using Domain.Models;
+using HeroCRUD.ModelDTO;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http.Extensions;
 
@@ -10,14 +11,14 @@ namespace BlazorHero.Pages
     {
         [Parameter]
         public int Id { get; set; }
-         public Heros herotoremove = new Heros();
+         public HeroDTO herotoremove = new HeroDTO();
         
         [Inject]
         public IHeroService _heroService {get; set;}
 
         private string ErrorMessage { get; set;}
         [Inject]
-        NavigationManager NavigationManager { get; set; }
+         public NavigationManager NavigationManager { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -25,14 +26,12 @@ namespace BlazorHero.Pages
             herotoremove = await _heroService.GetHeroById(Id);
             
         }
-        protected async void DeleteHero(int id)
+        protected  async Task DeleteHero(int id)
         {
             try
             {
-                
-                await _heroService.DeleteHero(id);
-                Console.WriteLine("Hero Deleted successfully!");
-                Cancel();// I must Update redirection 
+
+                 await _heroService.DeleteHero(id, NavigationManager);
 
             }
             catch (Exception ex)
@@ -41,9 +40,9 @@ namespace BlazorHero.Pages
             }
             
         }
-        protected void Cancel()
+        protected async  void Cancel()
         {
-            NavigationManager.NavigateTo("/Heros");
+             NavigationManager.NavigateTo("/Heros");
         }
     }
 }
