@@ -1,0 +1,45 @@
+﻿@page "/PowersGrid"
+@inherits PowerListBase
+
+
+
+@if(PowerList ==null)
+{
+    <p>lodaing Products ... </p>
+}
+else
+{
+    <h3>Power List</h3>
+    var PowerCount = PowerList.Count();
+    if (PowerCount > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Power in PowerList)
+                {
+                    <tr>
+                        <td>@Power.Id</td>
+                        <td>@Power.Name</td>
+                     
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+                
+    
+
+
+}
+
+   
+
+
+

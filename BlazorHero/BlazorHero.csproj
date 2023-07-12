@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IgniteUI.Blazor.Trial" Version="23.1.37" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="8.0.0-preview.6.23329.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+    <PackageReference Include="Syncfusion.Blazor" Version="22.1.38" />
+    <PackageReference Include="Syncfusion.Blazor.Themes" Version="22.1.38" />
   </ItemGroup>
 
   <ItemGroup>

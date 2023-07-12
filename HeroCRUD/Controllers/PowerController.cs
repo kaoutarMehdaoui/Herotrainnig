@@ -20,10 +20,11 @@ namespace HeroCRUD.Controllers
             _power = power;
             _mapper = mapper;
         }
-        [HttpGet("id")]
-        public ActionResult GetPower(int id )
+        [HttpGet("{id}")]
+        public ActionResult<HeroDTO> GetPower(int id )
         {
             Powers powerReturned = _power.getOne(id);
+            PowerDTO powerToReturne= _mapper.Map<PowerDTO>(powerReturned);
             if (powerReturned == null)
             {
                 return NotFound();
@@ -72,7 +73,7 @@ namespace HeroCRUD.Controllers
             }
 
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public ActionResult DeleteHero(int id)
         {
             try

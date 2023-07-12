@@ -10,6 +10,7 @@ namespace BlazorHero.Pages
         [Inject]
         public IHeroService _heroService { get; set; }
         public IReadOnlyList<HeroDTO> HeroReturnedFromAPI { get; set;}
+
         
        
         protected override async Task OnInitializedAsync()

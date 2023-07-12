@@ -19,10 +19,11 @@ namespace BlazorHero.Pages
         private string ErrorMessage { get; set;}
         [Inject]
          public NavigationManager NavigationManager { get; set; }
+         protected bool IsSave { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            
+            IsSave = false;
             herotoremove = await _heroService.GetHeroById(Id);
             
         }
@@ -30,7 +31,7 @@ namespace BlazorHero.Pages
         {
             try
             {
-
+                 IsSave=true;
                  await _heroService.DeleteHero(id, NavigationManager);
 
             }

@@ -124,6 +124,7 @@ namespace BlazorHero.Services
                 var rep = await _httpClient.PutAsJsonAsync<HeroDTO>("api/Heros", heroDTO);
                 if(rep.IsSuccessStatusCode)
                 {
+                   
                     navigation.NavigateTo("/Heros");
                 }
                 else

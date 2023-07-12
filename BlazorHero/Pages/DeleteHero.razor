@@ -1,7 +1,12 @@
 ﻿@page "/DeleteHero/{Id:int}"
 @inherits DeleteHeroBase
 <h3>DeleteHero</h3>
-
+@if (IsSave)
+{
+    <div class="alert alert-success">
+        <strong>Success!</strong> operation is successfully done.
+    </div>
+}
 @if( herotoremove!= null)
 {
     <div class="bg-light p-5 text-center">

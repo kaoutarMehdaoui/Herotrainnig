@@ -13,18 +13,15 @@ namespace BlazorHero.Pages
         public int Id { get; set; }
         [Inject]
         protected NavigationManager NavigationManager { get; set; }
-        public HeroDTO HeroToAdd = new HeroDTO()
-        {
-            photo = "",
-            Description = "",
-            gender = ""
-        };
+         public bool IsSaved { get; set; }
+        public HeroDTO HeroToAdd { get; set; }
         public string ErrorMessage { get; set; }
         [Inject]
         public IHeroService _heroService { get; set; }
 
        protected async override Task OnInitializedAsync()
         {
+            IsSaved= false;
             if(Id != null && Id!=0) 
             {
                 HeroToAdd = await _heroService.GetHeroById(Id);
@@ -32,7 +29,12 @@ namespace BlazorHero.Pages
             }
             else
             {
-                HeroToAdd = new HeroDTO() { };
+                HeroToAdd = new HeroDTO()
+                {
+                    photo = "",
+                    Description = "",
+                    gender = ""
+                }; 
             }
         }
 
@@ -42,15 +44,19 @@ namespace BlazorHero.Pages
            
             try
             {
+                IsSaved= true;
+              
                 if (Id != null && Id !=0) {
-
+                    
                     await _heroService.UpdateHero(HeroToAdd, NavigationManager);
                 }
                 else
                 {
+
                     await _heroService.AddHero(HeroToAdd, NavigationManager);
                     Console.WriteLine("Hero added successfully!");
                 }
+                
                 
             }
             catch (Exception ex)

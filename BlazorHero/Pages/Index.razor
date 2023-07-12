@@ -1,9 +1,26 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<div class="bg-image"
+     style="
+        background-image: url('/Images/avengers.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border:5px;
 
-<h1>Hello, world!</h1>
+     ">
+    <div class="mask" style="background-color: rgba(178, 60, 253, 0.6); height: 50vh;width:100vh">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+            
+            <h3 style="padding:15px;">Welcome to the Hero APP</h3>
+            <p style="padding:15px; color:#220135">Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+            <a href="/AddHero" class="btn btn-outline-light mt-3">Add Hero</a>
+        </div>
+    </div>
 
-Welcome to your new app.
+</div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
