@@ -1,6 +1,7 @@
 ﻿using BlazorHero.Services.Contracts;
 using Domain.Models;
 using HeroCRUD.ModelDTO;
+using Microsoft.AspNetCore.Components;
 using System.Net.Http.Json;
 
 namespace BlazorHero.Services
@@ -12,19 +13,77 @@ namespace BlazorHero.Services
         {
             _httpClient = http;
         }
-        public Task AddPower(PowerDTO power)
+        public async Task AddPower(PowerDTO power,NavigationManager navigationManager)
         {
-            throw new NotImplementedException();
+            
+            try
+            {
+                var reslt = await _httpClient.PostAsJsonAsync<PowerDTO>("api/Power", power);
+                if (reslt.IsSuccessStatusCode)
+                {
+                    if (reslt.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+
+                        Console.WriteLine("removed");
+                    }
+                   
+                    PowerDTO PowerDTOAdd = await reslt.Content.ReadFromJsonAsync<PowerDTO>();
+                    navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
+                }
+                else
+                {
+                    var message = await reslt.Content.ReadAsStringAsync();
+                    throw new Exception($"Http status code: {reslt.StatusCode} message: {message}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public Task DeletePower(int id)
+        public async Task DeletePower(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                
+                var reponse = await _httpClient.DeleteAsync($"api/Power/{id}");
+                if (reponse.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Power Removed");
+                }
+                else
+                {
+                    var message = await reponse.Content.ReadAsStringAsync();
+                    throw new Exception($"Http status code: {reponse.StatusCode} message: {message}");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public Task<PowerDTO> GetOnePower(int id)
+        public async  Task<PowerDTO> GetOnePower(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                
+                var result = await _httpClient.GetFromJsonAsync<PowerDTO>($"api/Power/{id}");
+                if (result != null)
+                {
+                   
+                    return result;
+                }
+                    
+                throw new Exception("Hero not found!");
+            }catch (Exception ex)
+            {
+                throw;
+            }
+          
         }
 
         public async Task<IReadOnlyList<Powers>> GetPowers()
@@ -54,9 +113,29 @@ namespace BlazorHero.Services
             
         }
 
-        public Task UpdatePower(PowerDTO power)
+        public async Task UpdatePower(PowerDTO power)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var reslt = await _httpClient.PutAsJsonAsync<PowerDTO>("api/Power", power);
+
+                if (reslt.IsSuccessStatusCode)
+                {
+
+                    Console.WriteLine("Power modified");
+                }
+                else
+                {
+                    var message = await reslt.Content.ReadAsStringAsync();
+                    throw new Exception($"Http status code: {reslt.StatusCode} message: {message}");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

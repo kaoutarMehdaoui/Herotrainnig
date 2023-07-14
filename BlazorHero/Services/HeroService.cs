@@ -106,9 +106,9 @@ namespace BlazorHero.Services
 
         public async  Task<HeroDTO> GetHeroById(int id)
         {
-           
-           
-                var result = await _httpClient.GetFromJsonAsync<HeroDTO>($"api/Heros/{id}");
+
+           ;
+            var result = await _httpClient.GetFromJsonAsync<HeroDTO>($"api/Heros/{id}");
                 if (result != null)
                     return result;
                 throw new Exception("Hero not found!");

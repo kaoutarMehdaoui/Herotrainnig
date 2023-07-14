@@ -3,40 +3,124 @@
 
 
 
-@if(PowerList ==null)
+@if (PowerList == null)
 {
-    <p>lodaing Products ... </p>
+    <p>Loading Powers...</p>
 }
 else
 {
     <h3>Power List</h3>
-    var PowerCount = PowerList.Count();
-    if (PowerCount > 0)
+    @if (PowerList.Count > 0)
     {
+        <div class="d-flex justify-content-end mb-3">
+            <button class="btn btn-custom-edit" @onclick="DisplayPopup">Add Hero</button>
+        </div>
         <table class="table">
             <thead>
                 <tr>
                     <th></th>
                     <th>Name</th>
-
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var Power in PowerList)
+                @foreach (var power in PowerList)
                 {
                     <tr>
-                        <td>@Power.Id</td>
-                        <td>@Power.Name</td>
-                     
+                        <td>@power.Id</td>
+                        <td>@power.Name</td>
+                        <td>
+                            <button class="btn btn-success">Edit</button>
+                            <button class="btn btn-danger" @onclick="() => OpenModal(power.Id)">Delete</button>
+                        </td>
                     </tr>
                 }
             </tbody>
         </table>
+        @*----------------------------------------------------- Popup Remove -------------------------------------------------  *@
+        <div class="modal" style="display: @(modalVisible ? "block" : "none")">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Power</h4>
+                        <button type="button" class="btn-close" @onclick="CloseModal"></button>
+                    </div>
+                    <div class="modal-body">
+                        @if (PowerpopToDelete != null)
+                        {
+                            <p> Are you sure you want to delete this Power : </p>
+                            <p>Power ID: @PowerpopToDelete.Id</p>
+                            <p>Power Name: @PowerpopToDelete.Name</p>
+                        }
+                        else
+                        {
+                            <p>Loading power details...</p>
+                        }
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" @onclick="()=>deleteONe(PowerpopToDelete.Id)"> Delete</button>
+                        <button type="button" class="btn btn-outline-secondary" @onclick="CloseModal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*----------------------------------------------------- Popup Add -------------------------------------------------  *@
+        <div class="modal" style="display: @(AddVisible ? "block" : "none")">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Power</h4>
+                        <button type="button" class="btn-close" @onclick="CloseModal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <EditForm Model="@OnePower" OnValidSubmit="@AddPower" >
+                            <DataAnnotationsValidator />
+                            <div class="mb-3">
+                                <label for="powerName" class="form-label">Name:</label>
+                                <InputText id="powerName" class="form-control" @bind-Value="OnePower.Name" placeholder="Enter Name" />
+                                <ValidationMessage For="@(() => OnePower.Name)" />
+                               
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" @onclick=" RefreshPage"> Add</button>
+                                <button type="button" class="btn btn-outline-secondary" @onclick="CloseModal">Cancel</button>
+                            </div>
+                           
+                        </EditForm>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*----------------------------------------------------- Popup Edit -------------------------------------------------  *@
+        @*<div class="modal" style="display: @(EditVisible ? "block" : "none")">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Power</h4>
+                        <button type="button" class="btn-close" @onclick="CloseModal"></button>
+                    </div>
+                    <div class="modal-body">
+
+                         <DataAnnotationsValidator />
+                            <div class="mb-3">
+                                <label for="powerName" class="form-label">Name:</label>
+                                <InputText id="powerName" class="form-control" @bind-Value="OnePower.Name" placeholder="Enter Name" />
+                                <ValidationMessage For="@(() => OnePower.Name)" />
+                               
+                            </div>
+                            
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button class="btn btn-warning"> Edit Power</button>
+                        <button type="button" class="btn btn-outline-secondary" @onclick="CloseModal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
     }
-                
-    
-
-
 }
 
    
