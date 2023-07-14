@@ -30,7 +30,7 @@ else
                         <td>@power.Id</td>
                         <td>@power.Name</td>
                         <td>
-                            <button class="btn btn-success">Edit</button>
+                            <button class="btn btn-success" @onclick="()=> OpenModalEdit(power.Id)">Edit</button>
                             <button class="btn btn-danger" @onclick="() => OpenModal(power.Id)">Delete</button>
                         </td>
                     </tr>
@@ -93,7 +93,7 @@ else
             </div>
         </div>
         @*----------------------------------------------------- Popup Edit -------------------------------------------------  *@
-        @*<div class="modal" style="display: @(EditVisible ? "block" : "none")">
+        <div class="modal" style="display: @(EditVisible ? "block" : "none")">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -101,7 +101,7 @@ else
                         <button type="button" class="btn-close" @onclick="CloseModal"></button>
                     </div>
                     <div class="modal-body">
-
+                        <EditForm Model="@OnePower" OnValidSubmit="@EditPower">
                          <DataAnnotationsValidator />
                             <div class="mb-3">
                                 <label for="powerName" class="form-label">Name:</label>
@@ -109,17 +109,15 @@ else
                                 <ValidationMessage For="@(() => OnePower.Name)" />
                                
                             </div>
-                            
+                            <button class="btn btn-warning" @onclick="RefreshPage"> Edit Power</button>
+                            <button type="button" class="btn btn-outline-secondary" @onclick="CloseModal">Cancel</button>
+                            </EditForm>
 
                     </div>
-                    <div class="modal-footer">
-
-                        <button class="btn btn-warning"> Edit Power</button>
-                        <button type="button" class="btn btn-outline-secondary" @onclick="CloseModal">Cancel</button>
-                    </div>
+                   
                 </div>
             </div>
-        </div>*@
+        </div>
     }
 }
 

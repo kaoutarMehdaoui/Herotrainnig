@@ -10,7 +10,7 @@ namespace BlazorHero.Pages
     public partial class PowerListBase: ComponentBase
     {
         
-        public int Id { get; set; }
+        
         [Inject]
          public IPower _power {  get; set; }
         [Inject]
@@ -37,6 +37,12 @@ namespace BlazorHero.Pages
             PowerpopToDelete = await _power.GetOnePower(id);
             StateHasChanged();
         }
+        protected async void OpenModalEdit(int id)
+        {
+            EditVisible = true;
+            OnePower = await _power.GetOnePower(id);
+            StateHasChanged();
+        }
         public void DisplayPopup()
         {
             try
@@ -48,6 +54,17 @@ namespace BlazorHero.Pages
                 ErrorMessage = ex.Message;
             }
         }
+        //public void EditPopup()
+        //{
+        //    try
+        //    {
+        //        EditVisible = true;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ErrorMessage = ex.Message;
+        //    }
+        //}
 
         protected void CloseModal()
         {
@@ -96,17 +113,23 @@ namespace BlazorHero.Pages
         }
         protected async void EditPower()
         {
-            //try
-            //{
-            //    await _power.AddPower(OnePower);
-            //    AddVisible = false;
-            //    await RefreshPage();
+            try
+            {
+                
+                    Console.WriteLine("ID " +OnePower.Id +" " +OnePower.Name );
+                    EditVisible = false;
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    ErrorMessage = ex.Message;
-            //}
+                    await _power.UpdatePower(OnePower);
+                
+                
+
+               
+
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+            }
         }
 
     }
