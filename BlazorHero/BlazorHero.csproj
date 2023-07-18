@@ -14,6 +14,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
     <PackageReference Include="Syncfusion.Blazor" Version="22.1.38" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="22.1.38" />
+    <PackageReference Include="Tewr.Blazor.FileReader" Version="3.3.2.23185" />
   </ItemGroup>
 
   <ItemGroup>
