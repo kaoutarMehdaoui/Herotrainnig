@@ -17,19 +17,19 @@ namespace BlazorHero.Pages
         [Parameter]
         public int Id { get; set; }
         public string NameImageToSend { get; set; }
-        public IBrowserFile fileToSave {get; set;}
+        public IBrowserFile fileToSave = null;
         
         [Inject]
         protected NavigationManager NavigationManager { get; set; }
          public bool IsSaved { get; set; }
-        public HeroDTO HeroToAdd { get; set; }
+        public HeroDTO HeroToAdd = new HeroDTO();
         public string ErrorMessage { get; set; }
         [Inject]
         public IHeroService _heroService { get; set; }
-        public IBrowserFile selectedImage {get; set; }
+        
         [Inject]
         public IJSRuntime JSRuntime { get; set; }   
-        bool imagLoad { get; set; }
+        
         [Inject]
         public IPhoto photo { get; set; }
        
@@ -66,7 +66,7 @@ namespace BlazorHero.Pages
                 NameImageToSend = fileName;
                 fileToSave = file;
                
-                Console.WriteLine($"Photo uploaded successfully. File name: {fileName}");
+                Console.WriteLine($"Photo uploaded successfully. File name: {fileName} ---- {fileToSave} ");
             }
             else
             {
@@ -74,7 +74,18 @@ namespace BlazorHero.Pages
             }
         }
 
-
+        //protected void ClearPhoto()
+        //{
+        //    Console.WriteLine("HELLO");
+        //    if (!string.IsNullOrEmpty(HeroToAdd.photo))
+        //    {
+        //        fileToSave = null;
+        //        // Delete the current file
+        //        File.Delete(HeroToAdd.photo);
+        //        HeroToAdd.photo = null;
+        //    }
+        //}
+      
 
         protected async Task AddHeroClick()
         {
@@ -99,11 +110,14 @@ namespace BlazorHero.Pages
                 }
                 else
                 {
-                    Console.WriteLine(HeroToAdd.photo);
-                    await photo.UploadPhoto(fileToSave, NameImageToSend);
-                    await _heroService.AddHero(HeroToAdd, NavigationManager);
-                        Console.WriteLine("Hero added successfully!");
+                    Console.WriteLine("Call ok ");
+                   
+                        await photo.UploadPhoto(fileToSave, NameImageToSend);
                     
+                    Console.WriteLine(HeroToAdd.photo);
+                    await _heroService.AddHero(HeroToAdd, NavigationManager);
+                    Console.WriteLine("Hero added successfully!");
+                    NavigationManager.NavigateTo("/Heros");
                     Console.WriteLine(HeroToAdd.photo);
 
                 }

@@ -4,6 +4,7 @@ using Domain.Models;
 using HeroCRUD.ModelDTO;
 using IgniteUI.Blazor.Controls;
 using Microsoft.AspNetCore.Components;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BlazorHero.Pages
 {
@@ -15,22 +16,60 @@ namespace BlazorHero.Pages
          public IPower _power {  get; set; }
         [Inject]
         public NavigationManager NavigationManager { get; set; }
-         protected bool modalVisible = false;
+        public string Filter { get; set; }
+        protected bool modalVisible = false;
         protected bool AddVisible = false;
         protected bool EditVisible = false;
         public List<Powers> PowerList = new List<Powers>();
         public PowerDTO OnePower = new PowerDTO();
         public PowerDTO PowerpopToDelete { get; set; }
         protected string ErrorMessage { get; set; }
-
+        protected string sortColumn;
+        protected bool ascending = true;
 
         protected override async Task OnInitializedAsync()
         {
             PowerList = (await _power.GetPowers()).ToList();
             OnePower = new PowerDTO();
-
+           
         }
-        
+        public bool FilltringName(Powers powerfilter)
+        {
+            if (string.IsNullOrEmpty(Filter))
+                return true;
+            if (powerfilter.Name.ToString().StartsWith(Filter, StringComparison.OrdinalIgnoreCase)||powerfilter.Id.ToString().StartsWith(Filter))
+                return true;
+            return false;
+        }
+
+        public void SortData()
+        {
+            sortColumn = "Name";
+            ascending = !ascending;
+
+            if (ascending)
+            {
+                PowerList = PowerList.OrderBy(power => power.Name).ToList();
+            }
+            else
+            {
+                PowerList = PowerList.OrderByDescending(power => power.Name).ToList();
+            }
+        }
+        public void SortID()
+        {
+            sortColumn = "ID";
+            ascending = !ascending;
+
+            if (ascending)
+            {
+                PowerList = PowerList.OrderBy(power => power.Id).ToList();
+            }
+            else
+            {
+                PowerList = PowerList.OrderByDescending(power => power.Id).ToList();
+            }
+        }
         protected async void OpenModal(int id)
         {
             modalVisible = true;

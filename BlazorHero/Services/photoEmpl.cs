@@ -19,17 +19,20 @@ namespace BlazorHero.Services
         {
             if (file == null)
             {
+                Console.WriteLine(" UploadPhoto  null");
                 throw new ArgumentNullException(nameof(file), "File cannot be null.");
             }
-
+            Console.WriteLine(" UploadPhoto Not null"+file);
             using var stream = file.OpenReadStream();
             using var memoryStream = new MemoryStream();
+            Console.WriteLine("console to delete"+ memoryStream);
             await stream.CopyToAsync(memoryStream);
             var fileContent = memoryStream.ToArray();
-
+            Console.WriteLine("console to delete 2" + fileContent);
             var formDataContent = new MultipartFormDataContent() { };
             formDataContent.Add(new ByteArrayContent(fileContent), "file", Name);
-             Console.WriteLine(formDataContent.ToString());
+            Console.WriteLine("console to delete 2" + formDataContent);
+            Console.WriteLine(formDataContent.ToString());
             var response = await _httpClient.PostAsync("/api/Photos", formDataContent);
             Console.WriteLine(response.IsSuccessStatusCode);
             if (response.IsSuccessStatusCode)

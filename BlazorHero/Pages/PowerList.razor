@@ -10,22 +10,43 @@
 else
 {
     <h3>Power List</h3>
+    <div class="form-group">
+   
+    </div>
     @if (PowerList.Count > 0)
     {
+        <input style=" margin:20px " class="form-control" type="text" placeholder="Filter..." @bind="Filter"
+           @bind:event="oninput">
         <div class="d-flex justify-content-end mb-3">
             <button class="btn btn-custom-edit" @onclick="DisplayPopup">Add Hero</button>
         </div>
         <table class="table">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>Name</th>
+                    <th> 
+                        <span class="sort-text">ID</span>
+                        <button class="sort-btn" @onclick="SortID" >
+                                        <i class="oi oi-elevator" ></i>
+                        </button>
+                    </th>
+                    <th> 
+                        
+                             <span class="sort-text">Name</span>
+                            
+                                  <button class="sort-btn" @onclick="SortData" >
+                                        <i class="oi oi-elevator" ></i>
+                                   </button>
+                                  
+                        
+                    </th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var power in PowerList)
                 {
+                     if (!FilltringName(power))
+                continue;
                     <tr>
                         <td>@power.Id</td>
                         <td>@power.Name</td>

@@ -106,3 +106,21 @@ img {
 a.card-buttons{
     color:azure !important
 }
+.sort-container {
+    display: flex;
+    position: center;
+}
+
+.sort-text {
+    margin-right: 85% !important;
+}
+
+.sort-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: flex;
+    right: 0!important;
+    
+    transform: translateY(-50%);
+}

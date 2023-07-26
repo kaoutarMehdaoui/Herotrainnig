@@ -48,20 +48,25 @@
                             <InputText id="photo" class="form-control" @bind-Value="HeroToAdd.photo" />
                             <ValidationMessage For="@(() => HeroToAdd.photo)" />
                         </div>
-                        <div>
-                            
-                                 @if (!string.IsNullOrEmpty(HeroToAdd.photo))
-                                        {
-                                          <div class="image-container">
-                                          <img class="img-fluid" src="@HeroToAdd.photo" alt="Hero Image" />
-                                </div>
-                            }
-                            else
-                            {
-                            <InputFile id="photo" OnChange="@LoadFiles" accept=".jpg, .jpeg, png" @bind-Value="HeroToAdd.photo" />
-                            <ValidationMessage For="@(() => HeroToAdd.photo)" />
-                            }
+
+                        @*       @if(HeroToAdd.photo==null || HeroToAdd.photo=="")
+                                {
+                                   <InputFile id="photo" OnChange="@LoadFiles" accept=".jpg, .jpeg, png"  @bind-Value="HeroToAdd.photo" />
+                                   <ValidationMessage For="@(() => HeroToAdd.photo)" />
+                                }
+
+                        else{*@
+                             <div>
+                          
+                             <div class="text-center">
+                            <img src="@HeroToAdd.photo" alt="Hero Photo" class="img-thumbnail" />
+                            <button  class="btn btn-sm btn-danger">Clear Photo</button>
                         </div>
+                        
+                            </div>
+                        
+
+                       
 
                         <div class="form-group">
                             <label for="gender">Gender:</label>
